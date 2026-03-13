@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Loving Homes – منظور جديد لرفاهية الكلاب. مساحات هادئة وعناية لا مثيل لها." />
+  <title>Loving Homes | مفهوم جديد للراحة</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <div class="audio-section">
+    <button class="audio-btn" id="playBtn" aria-label="تشغيل الموسيقى">
+      <svg id="playIcon" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z" />
+      </svg>
+      <svg id="pauseIcon" viewBox="0 0 24 24" style="display:none">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+      </svg>
+    </button>
+    <div class="audio-bars" id="audioBars">
+      <div class="bar paused"></div>
+      <div class="bar paused"></div>
+      <div class="bar paused"></div>
+      <div class="bar paused"></div>
+    </div>
+    <span class="audio-label">موسيقى هادئة</span>
+  </div>
+  <audio id="bgAudio" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+  </audio>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">🌿</div>
+          <div class="logo-text">Loving Homes</div>
+        </a>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="active">الرئيسية</a></li>
+          <li><a href="services.html">مفهومنا</a></li>
+          <li><a href="packages.html">الإقامات</a></li>
+          <li><a href="story.html">تاريخنا</a></li>
+          <li><a href="contact.html" class="nav-cta">ابدأ التجربة</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-v4">
+      <div class="hero-shape-1"></div>
+      <div class="hero-shape-2"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <div class="badge">ملاذ عصري في هونغ كونغ</div>
+          <h1>أعد اكتشاف معنى <span>الرفاهية</span> لصديقك</h1>
+          <p>مساحات مفتوحة، إضاءة طبيعية، ورعاية من القلب. لقد صممنا بيئة خالية من التوتر تجمع بين حرية اللعب والهدوء
+            العميق.</p>
+          <div class="hero-actions">
+            <a href="packages.html" class="btn btn-primary">اكتشف المساحات</a>
+            <a href="#philosophy" class="btn btn-secondary">اقرأ عن فلسفتنا</a>
+          </div>
+        </div>
+
+        <div class="hero-images">
+          <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?w=800&q=80" alt="كلب مسترخي"
+            class="img-main" />
+          <img src="https://i.ibb.co/VcNGW10W/image.png" alt="كلب يلعب" class="img-float" />
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats-bar">
+        <div class="stat-block">
+          <h3>98%</h3>
+          <p>تقييم راحة لا مثيل له</p>
+        </div>
+        <div class="stat-block">
+          <h3>24/7</h3>
+          <p>مراقبة صحية ذكية</p>
+        </div>
+        <div class="stat-block">
+          <h3>15m</h3>
+          <p>حدائق ومساحات خارجية</p>
+        </div>
+      </div>
+    </div>
+
+    <section id="philosophy" class="philosophy">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">الفلسفة الأساسية</span>
+          <h2>أكثر من مجرد رعاية، إنه أسلوب حياة</h2>
+        </div>
+
+        <div class="cards-wrapper">
+          <div class="phil-card">
+            <div class="phil-icon">✨</div>
+            <h3>بيئة محفزة بصرياً</h3>
+            <p>ألوان هادئة ومواد طبيعية تصنع فارقاً حقيقياً في نفسية الكلاب وتقلل من قلق الانفصال بشكل ملحوظ.</p>
+          </div>
+          <div class="phil-card">
+            <div class="phil-icon">🍃</div>
+            <h3>تغذية واستشفاء</h3>
+            <p>برامج قائمة على أسس علمية ومكونات عضوية لتعزيز المناعة والنشاط خلال فترة الإقامة.</p>
+          </div>
+          <div class="phil-card">
+            <div class="phil-icon">🌅</div>
+            <h3>توازن الطاقة</h3>
+            <p>جدول يمزج بين التمارين الحركية في الهواء الطلق وجلسات الاسترخاء الذهني لضمان نوم عميق.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="split-visual">
+      <div class="container">
+        <div class="split-grid">
+          <div class="split-text">
+            <h2>شفافية في كل لحظة</h2>
+            <p>لأننا نعلم مدى ارتباطك به، قمنا بابتكار نظام تحديث يومي ذكي. لن تكون بعيداً أبداً؛ ستتلقى لقطات عفوية
+              وتقارير عن مزاجه ونشاطه لتشاركه لحظاته السعيدة من أي مكان في العالم.</p>
+            <a href="contact.html" class="btn btn-secondary" style="align-self: flex-start;">انضم لعائلتنا</a>
+          </div>
+          <div class="split-img">
+            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800&q=80" alt="كلبان يلعبان معاً" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-v4">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">اللحظات</span>
+          <h2>مقتطفات من الهدوء والمرح</h2>
+        </div>
+
+        <div class="g-masonry">
+          <div class="g-item g-large">
+            <img src="https://images.unsplash.com/photo-1537151608804-ea2f10b7b12d?w=800&q=80" alt="لحظة هدوء" />
+            <span class="g-label">استرخاء</span>
+          </div>
+          <div class="g-item">
+            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=500&q=80" alt="لعب" />
+            <span class="g-label">نشاط حركي</span>
+          </div>
+          <div class="g-item g-tall">
+            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=500&q=80" alt="كلب ينظر" />
+            <span class="g-label">تأمل</span>
+          </div>
+          <div class="g-item">
+            <img src="https://images.unsplash.com/photo-1505628346881-b72b27e84530?w=500&q=80" alt="صداقة" />
+            <span class="g-label">تفاعل اجتماعي</span>
+          </div>
+          <!-- Added Custom Client Dogs from the user -->
+          <div class="g-item">
+            <img src="https://i.ibb.co/9kxZDjKQ/image.png" alt="كلبة بودل صغيرة مبتسمة" loading="lazy" />
+            <span class="g-label">الأميرة لولو</span>
+          </div>
+          <div class="g-item">
+            <img src="https://i.ibb.co/xt6jPwKX/image.png" alt="كلب هاسكي نشيط" loading="lazy" />
+            <span class="g-label">المتألق كاي</span>
+          </div>
+          <div class="g-item">
+            <img src="https://i.ibb.co/nMJbRs7b/image.png" alt="كلب جولدن ريتريفر مرح" loading="lazy" />
+            <span class="g-label">النجم المشرق نور</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EXPERIENCE & STATS ─────────────────────────────────────────── -->
+    <section id="watch-video" class="experience-v4">
+      <div class="container exp-grid">
+        <div class="exp-text">
+          <span class="tag">نظرة من الداخل</span>
+          <h2>يوم مليء بالشغف والمرح المتواصل</h2>
+          <p>دعنا نأخذك في جولة مرئية لتعيش معنا تفاصيل اليوم الكامل الذي يقضيه صديقك في منتجعنا الغني بالرفاهيات
+            والأمان، لنثبت لك أننا أكثر من مجرد فندق.</p>
+          <div class="stats-mini-grid">
+            <div class="s-box">
+              <span class="s-num">٩٠٠+</span>
+              <span class="s-lbl">عائلة تثق بخدماتنا</span>
+            </div>
+            <div class="s-box">
+              <span class="s-num">١٠٠٪</span>
+              <span class="s-lbl">شفافية في التواصل</span>
+            </div>
+          </div>
+        </div>
+        <div class="exp-video">
+          <video width="100%" controls poster="https://i.ibb.co/KSrJJ3r/image.png">
+            <source
+              src="https://cdn.jumpshare.com/preview/VOJ5oW6tRI5dBcZkK06LdNz56obfSlBs2nvKYcrFpeqKeB4ZlnrxQS1Tf4LCn-2BgWHe2yxzu3MKQb68t7Id7wgWasdTpsJK-KN_cA7O9bhJnyxIOaojaDgXOuVmMbLAEobwHzZAoYzRK4sXncHQM26yjbN-I2pg_cnoHs_AmgI.mp4"
+              type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── REVIEWS ───────────────────────────────────── -->
+    <section class="reviews-v4">
+      <div class="container">
+        <div class="section-header">
+          <h2>حكايات لا تُنسى من العائلات</h2>
+          <a href="contact.html" class="btn btn-secondary" style="margin-top:1rem;">شاركنا تجربتك</a>
+        </div>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="r-quote">"</div>
+            <p>الإقامة هنا ليست مجرد استضافة، بل هي عطلة حقيقية لريو. مستوى النظافة والاهتمام بأدق التفاصيل يفوق أفخم
+              الفنادق البشرية! عاد أليفنا مرتاحاً ومليئاً بالنشاط.</p>
+            <div class="r-user">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80&fit=crop&crop=face"
+                alt="سامي العتيبي" loading="lazy" />
+              <div>
+                <h4>سامي العتيبي</h4>
+                <span>والد ريو</span>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="r-quote">"</div>
+            <p>التحديثات اليومية والصور التي أستقبلها تجعلني أعيش مع لولو لحظاتها السعيدة رغم المسافة. أنا ممتنة جداً
+              لوجود هذا الملاذ الآمن الذي يعمل بصدق وحب.</p>
+            <div class="r-user">
+              <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=80&q=80&fit=crop&crop=face"
+                alt="هيلين تشن" loading="lazy" />
+              <div>
+                <h4>هيلين تشن</h4>
+                <span>والدة لولو</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BOTTOM CTA ───────────────────────────────────────────── -->
+    <section class="cta-v4">
+      <div class="container">
+        <div class="cta-inner">
+          <h2>لا تساوم على سعادته.. احجز مكانه اليوم</h2>
+          <p>تواصل معنا لترتيب زيارة تعريفية أو لاختيار الباقة التي تناسب طبيعة حيوانك الأليف المميزة، ودع الباقي علينا.
+          </p>
+          <div class="cta-actions">
+            <a href="packages.html" class="btn btn-secondary">باقات الإقامة</a>
+            <a href="contact.html" class="btn btn-primary">تحدث معنا الآن</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer-v4">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon" style="background:#fff; color:var(--charcoal);">🌿</div>
+            <div class="logo-text">Loving Homes</div>
+          </a>
+          <p class="footer-p">نصنع ذكريات سعيدة للحيوانات الأليفة في بيئة استثنائية.</p>
+        </div>
+        <div class="footer-col">
+          <h4>المسارات</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="services.html">مفهومنا</a></li>
+            <li><a href="packages.html">المساحات</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>الروابط</h4>
+          <ul class="footer-links">
+            <li><a href="story.html">تاريخنا</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>الموقع</h4>
+          <p class="footer-p" style="margin-top:0;">هونغ كونغ<br />خدمة استقبال مخصصة ومتاحة لكافة المناطق.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Loving Homes. تصميم عصري جديد.</span>
+        <span>بكل حب من هونغ كونغ.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+
+</html>

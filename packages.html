@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="باقات Loving Homes المتطورة: النهار، الإقامة، والنخبة لإقامة فندقية فاخرة للكلاب في هونغ كونغ." />
+  <title>خارطة الإقامات | Loving Homes – هونغ كونغ</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .page-header-v4 {
+      background: var(--sage-900);
+      color: var(--white);
+      padding: 10rem 0 6rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-header-v4::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(194,167,128,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .page-header-v4 h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; }
+    .page-header-v4 p { color: rgba(255,255,255,0.7); font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+    
+    .pricing-sect { padding: 8rem 0; }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .price-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+      border-top: 5px solid var(--sage-100);
+    }
+    .price-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-md); border-color: var(--sage-400); }
+    .price-card.featured {
+      background: var(--sage-800);
+      color: var(--white);
+      transform: scale(1.05);
+      border-color: var(--sand-500);
+      box-shadow: var(--shadow-lg);
+    }
+    .price-card.featured:hover { transform: scale(1.05) translateY(-10px); }
+    
+    .pc-badge {
+      position: absolute;
+      top: -15px; right: 2.5rem;
+      background: var(--sand-500);
+      color: var(--white);
+      padding: 0.4rem 1.2rem;
+      border-radius: var(--radius-xl);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+    }
+    .pc-icon {
+      width: 60px; height: 60px;
+      background: var(--sage-100);
+      color: var(--sage-800);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .featured .pc-icon { background: rgba(255,255,255,0.1); color: var(--sand-400); }
+    
+    .pc-title { font-size: 1.8rem; color: var(--sage-900); margin-bottom: 0.5rem; }
+    .featured .pc-title { color: var(--white); }
+    .pc-desc { color: var(--text-mid); font-size: 0.95rem; margin-bottom: 2rem; border-bottom: 1px solid var(--sand-200); padding-bottom: 2rem; }
+    .featured .pc-desc { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.1); }
+    
+    .pc-list { margin-bottom: 2.5rem; }
+    .pc-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+    .featured .pc-list li { color: var(--white); }
+    .pc-check { color: var(--sage-600); font-weight: 800; }
+    .featured .pc-check { color: var(--sand-400); }
+    
+    .pc-btn { width: 100%; text-align: center; }
+    
+    .compare-sect { padding: 4rem 0 8rem; }
+    .c-table-wrap {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      box-shadow: var(--shadow-sm);
+      overflow-x: auto;
+    }
+    .c-table { width: 100%; border-collapse: collapse; min-width: 700px; }
+    .c-table th {
+      text-align: right;
+      padding: 1.5rem 1rem;
+      color: var(--sage-900);
+      font-size: 1.1rem;
+      border-bottom: 2px solid var(--sage-100);
+    }
+    .c-table th.center { text-align: center; }
+    .c-table td {
+      padding: 1.2rem 1rem;
+      border-bottom: 1px solid var(--sand-200);
+      color: var(--text-mid);
+    }
+    .c-table td.center { text-align: center; }
+    .c-table tr:last-child td { border-bottom: none; }
+    .t-check { color: var(--sage-600); font-weight: 800; font-size: 1.2rem; }
+    .t-times { color: #ddd; font-weight: 800; }
+    .feature-name { color: var(--text-dark); font-weight: 600; }
+    
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">🌿</div>
+          <div class="logo-text">Loving Homes</div>
+        </a>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="services.html">مفهومنا</a></li>
+          <li><a href="packages.html" class="active">الإقامات</a></li>
+          <li><a href="story.html">تاريخنا</a></li>
+          <li><a href="contact.html" class="nav-cta">ابدأ التجربة</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header-v4">
+      <div class="container">
+        <h1>مساحات مصممة لراحته</h1>
+        <p>خيارات شفافة تجمع بين الأناقة والاستدامة، لضمان أعلى مستويات الرفاهية سواء كانت زيارة نهارية أو استضافة كاملة.</p>
+      </div>
+    </section>
+
+    <section class="pricing-sect">
+      <div class="container">
+        <div class="pricing-grid">
+          
+          <div class="price-card">
+            <div class="pc-icon">☀️</div>
+            <h3 class="pc-title">الرعاية النهارية</h3>
+            <p class="pc-desc">للكلاب النشيطة التي تحتاج لتفريغ طاقتها أثناء انشغالك.</p>
+            <ul class="pc-list">
+              <li><span class="pc-check">✓</span> مساحات لعب مفتوحة</li>
+              <li><span class="pc-check">✓</span> جلسات تفاعل اجتماعي</li>
+              <li><span class="pc-check">✓</span> استراحة هادئة وقت الظهيرة</li>
+              <li><span class="pc-check">✓</span> إشراف طبي دائم</li>
+            </ul>
+            <a href="contact.html" class="btn btn-secondary pc-btn">احجز يومه</a>
+          </div>
+          
+          <div class="price-card featured">
+            <span class="pc-badge">الأكثر طلباً</span>
+            <div class="pc-icon">🌙</div>
+            <h3 class="pc-title">ملاذ الإقامة</h3>
+            <p class="pc-desc">توازن مثالي بين الراحة الفندقية والجدول اليومي الحيوي.</p>
+            <ul class="pc-list">
+              <li><span class="pc-check">✓</span> 3 جلسات لعب ونزهات</li>
+              <li><span class="pc-check">✓</span> جناح ليلي هادئ ودافئ</li>
+              <li><span class="pc-check">✓</span> عناية سريعة قبل النوم</li>
+              <li><span class="pc-check">✓</span> إشراف ومراقبة على مدار الساعة</li>
+              <li><span class="pc-check">✓</span> تقرير يومي عن حالته</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary pc-btn" style="background:var(--sand-500); color:var(--charcoal);">تأكيد الإقامة</a>
+          </div>
+
+          <div class="price-card">
+            <div class="pc-icon">✨</div>
+            <h3 class="pc-title">إقامة النخبة</h3>
+            <p class="pc-desc">التجربة المطلقة التي تركز على الخصوصية والرفاهية المفرطة.</p>
+            <ul class="pc-list">
+              <li><span class="pc-check">✓</span> مسار لعب خاص ومنعزل</li>
+              <li><span class="pc-check">✓</span> نظام غذائي فاخر ومخصص</li>
+              <li><span class="pc-check">✓</span> تحديثات حية (صور وفيديو)</li>
+              <li><span class="pc-check">✓</span> جناح واسع مطل على الحديقة</li>
+              <li><span class="pc-check">✓</span> جلسة تدليك وعناية شاملة</li>
+            </ul>
+            <a href="contact.html" class="btn btn-secondary pc-btn">اكتشف الفرق</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="compare-sect">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 3rem;">
+          <h2 style="color: var(--sage-900);">نظرة تفصيلية</h2>
+        </div>
+        <div class="c-table-wrap">
+          <table class="c-table">
+            <thead>
+              <tr>
+                <th>الخدمة / الميزة</th>
+                <th class="center">الرعاية النهارية</th>
+                <th class="center" style="color:var(--sand-500);">ملاذ الإقامة</th>
+                <th class="center">إقامة النخبة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="feature-name">التفاعل الاجتماعي اليومي</td>
+                <td class="center"><span class="t-check">✓</span></td>
+                <td class="center"><span class="t-check">✓</span></td>
+                <td class="center"><span class="t-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">جناح نوم شخصي مكيّف</td>
+                <td class="center"><span class="t-times">✕</span></td>
+                <td class="center"><span class="t-check">✓</span></td>
+                <td class="center"><span class="t-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">الرعاية الصحية الاستباقية</td>
+                <td class="center"><span class="t-check">✓</span></td>
+                <td class="center"><span class="t-check">✓</span></td>
+                <td class="center"><span class="t-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">جلسة العناية والتلميع</td>
+                <td class="center"><span class="t-times">✕</span></td>
+                <td class="center"><span class="t-check">✓</span> (خفيفة)</td>
+                <td class="center"><span class="t-check">✓</span> (شاملة)</td>
+              </tr>
+              <tr>
+                <td class="feature-name">تغذية فاخرة أو مخصصة</td>
+                <td class="center"><span class="t-times">✕</span></td>
+                <td class="center"><span class="t-times">✕</span> (تغذية المالك)</td>
+                <td class="center"><span class="t-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">تحديثات وسائط يومية</td>
+                <td class="center"><span class="t-times">✕</span></td>
+                <td class="center"><span class="t-times">✕</span> (تقارير نصية)</td>
+                <td class="center"><span class="t-check">✓</span> (صور وفيديو)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-v4">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon" style="background:#fff; color:var(--charcoal);">🌿</div>
+            <div class="logo-text" style="color:var(--white);">Loving Homes</div>
+          </a>
+          <p class="footer-p">نصنع ذكريات سعيدة للحيوانات الأليفة في بيئة استثنائية.</p>
+        </div>
+        <div class="footer-col">
+          <h4>المسارات</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="services.html">مفهومنا</a></li>
+            <li><a href="packages.html">المساحات</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>الروابط</h4>
+          <ul class="footer-links">
+            <li><a href="story.html">تاريخنا</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>الموقع</h4>
+          <p class="footer-p" style="margin-top:0;">هونغ كونغ<br/>خدمة استقبال مخصصة ومتاحة لكافة المناطق.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Loving Homes. تصميم عصري جديد.</span>
+        <span>بكل حب من هونغ كونغ.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+
+</html>

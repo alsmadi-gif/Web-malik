@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="تاريخ ومبادئ Loving Homes في هونغ كونغ. حكاية أمل ورعاية لا تتوقف." />
+  <title>تاريخنا | Loving Homes – هونغ كونغ</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .page-header-v4 {
+      background: var(--sand-200);
+      color: var(--sage-900);
+      padding: 10rem 0 6rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-header-v4::before {
+      content: '';
+      position: absolute;
+      bottom: -150px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .page-header-v4 h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; position: relative; z-index: 1;}
+    .page-header-v4 p { color: var(--text-mid); font-size: 1.2rem; max-width: 600px; margin: 0 auto; position: relative; z-index: 1;}
+    
+    .story-hero { padding: 6rem 0; }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .story-text h2 { color: var(--sage-900); margin-bottom: 1.5rem; font-size: 2.2rem; }
+    .story-text p { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--text-mid); }
+    .quote-box {
+      background: var(--white);
+      border-right: 4px solid var(--sage-400);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-sm);
+    }
+    .quote-box p { font-family: 'Tajawal', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--sage-800); margin: 0; }
+    .quote-author { display: block; margin-top: 1rem; font-size: 0.9rem; color: var(--sand-500); font-weight: 800; }
+    
+    .story-img { position: relative; border-radius: var(--radius-xl) 0 var(--radius-xl) var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .story-img img { width: 100%; height: 600px; object-fit: cover; }
+    .badge-year {
+      position: absolute;
+      bottom: 2rem; left: 2rem;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-lg);
+      font-weight: 800;
+      color: var(--sage-900);
+      box-shadow: var(--shadow-md);
+    }
+
+    .values-sect { padding: 6rem 0; background: var(--sage-900); color: var(--white); }
+    .v-header { text-align: center; margin-bottom: 4rem; }
+    .v-header h2 { color: var(--white); }
+    .v-header p { color: rgba(255,255,255,0.7); }
+    .v-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+    }
+    .v-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2rem;
+      transition: var(--transition);
+    }
+    .v-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.07); border-color: var(--sand-500); }
+    .v-icon { font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--sand-400); }
+    .v-card h3 { color: var(--white); margin-bottom: 1rem; }
+    .v-card p { color: rgba(255,255,255,0.6); line-height: 1.8; }
+
+    .timeline-sect { padding: 8rem 0; background: var(--white); }
+    .t-header { text-align: center; margin-bottom: 5rem; }
+    .timeline-wrap { max-width: 800px; margin: 0 auto; position: relative; }
+    .timeline-wrap::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0; left: 50%;
+      width: 2px;
+      background: var(--sand-200);
+      transform: translateX(-50%);
+    }
+    .t-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4rem;
+      position: relative;
+    }
+    .t-item:nth-child(even) { flex-direction: row-reverse; }
+    .t-content {
+      width: 45%;
+      background: var(--sand-50);
+      padding: 2.5rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+    .t-content::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 0; height: 0;
+      border: 15px solid transparent;
+      transform: translateY(-50%);
+    }
+    .t-item:nth-child(odd) .t-content::after { left: -30px; border-right-color: var(--sand-50); }
+    .t-item:nth-child(even) .t-content::after { right: -30px; border-left-color: var(--sand-50); }
+    
+    .t-year {
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--white);
+      color: var(--sage-800);
+      font-weight: 800;
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      border: 4px solid var(--sand-200);
+      box-shadow: 0 0 0 6px var(--white);
+      z-index: 2;
+    }
+    .t-content h4 { color: var(--sage-900); font-size: 1.2rem; margin-bottom: 0.5rem; }
+    
+    @media (max-width: 900px) {
+      .story-grid { grid-template-columns: 1fr; }
+      .timeline-wrap::before { left: 40px; }
+      .t-item, .t-item:nth-child(even) { flex-direction: column; align-items: flex-start; padding-right: 100px; }
+      .t-year { left: 40px; width: 60px; height: 60px; font-size: 0.9rem; }
+      .t-content { width: 100%; }
+      .t-item:nth-child(odd) .t-content::after, .t-item:nth-child(even) .t-content::after { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">🌿</div>
+          <div class="logo-text">Loving Homes</div>
+        </a>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="services.html">مفهومنا</a></li>
+          <li><a href="packages.html">الإقامات</a></li>
+          <li><a href="story.html" class="active">تاريخنا</a></li>
+          <li><a href="contact.html" class="nav-cta">ابدأ التجربة</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header-v4">
+      <div class="container">
+        <h1>حكاية مودة مستمرة</h1>
+        <p>بدأت بلحظة عطف في شوارع المدينة المزدحمة، وتطورت لتصبح المعيار الذهبي لراحة الكلاب.</p>
+      </div>
+    </section>
+
+    <section class="story-hero">
+      <div class="container">
+        <div class="story-grid">
+          <div class="story-img">
+            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=800&q=80" alt="صداقة الإنسان والكلاب" />
+            <div class="badge-year">تأسس عام 2014</div>
+          </div>
+          <div class="story-text">
+            <h2>إلهام ولد من رحم الحاجة</h2>
+            <p>في قلب مدينة هونغ كونغ الصاخبة وبناياتها الشاهقة، كان من الصعب على الكثير من العائلات إيجاد مساحات حقيقية تعبر فيها حيواناتهم عن طبيعتها بعيداً عن الجدران الإسمنتية.</p>
+            <div class="quote-box">
+              <p>"لم نكن نبحث عن مجرد مأوى فندقي، بل كنا نسعى لخلق بيئة تتنفس فيها أرواحهم بحرية وأمان."</p>
+              <span class="quote-author">— ليان الخطيب، المؤسِسَة</span>
+            </div>
+            <p>حين أنقذت المؤسسة كلباً ضالاً، واجهت تحدي إيجاد من يعتني به كما ينبغي أثناء سفرها. هذه العقبة كانت شرارة الانطلاق؛ قررت تأسيس ملاذ لا يساوم على جودة الهواء، مساحات اللعب، أو الاحتضان العاطفي.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="values-sect">
+      <div class="container">
+        <div class="v-header">
+          <h2>بوصلتنا الأخلاقية والمهنية</h2>
+          <p>الأعمدة التي يرتكز عليها كل قرار نتخذه في رعاية ضيوفنا.</p>
+        </div>
+        <div class="v-grid">
+          <div class="v-card">
+            <div class="v-icon">🌱</div>
+            <h3>احترام الفطرة</h3>
+            <p>نؤمن بترك الكلاب تتصرف بطبيعتها. نوفر مساحات ترابية وعشبية للنفش والحفر ومحفزات بصرية تسعدهم.</p>
+          </div>
+          <div class="v-card">
+            <div class="v-icon">🤝</div>
+            <h3>شراكة مع المالك</h3>
+            <p>لسنا بديلاً عنك، بل امتداد لرعايتك. لذلك نعتمد سياسة الباب المفتوح والتحديثات المستمرة لتكون حاضراً معهم بخيالك.</p>
+          </div>
+          <div class="v-card">
+            <div class="v-icon">⚖️</div>
+            <h3>توازن نفسي وصحي</h3>
+            <p>لا تفضيل لأحد الجوانب على الآخر؛ العناية الطبية تواكبها رعاية نفسية بجدول متوازن لا يسبب الإرهاق أو الملل.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-sect">
+      <div class="container">
+        <div class="t-header">
+          <span style="color:var(--sand-500); font-weight:800; display:block; margin-bottom:1rem;">رحلتنا في سطور</span>
+          <h2 style="color:var(--sage-900);">من شقة ضيقة إلى منتجع متكامل</h2>
+        </div>
+        
+        <div class="timeline-wrap">
+          <div class="t-item">
+            <div class="t-content">
+              <h4>نواة الفكرة</h4>
+              <p>استضافة الكلاب من الأصدقاء والمعارف في بيئة منزلية دافئة أثناء سفرهم، لتعويضهم عن فكرة الأقفاص التي كانت شائعة آنذاك.</p>
+            </div>
+            <div class="t-year">2014</div>
+          </div>
+          <div class="t-item">
+            <div class="t-content">
+              <h4>القفزة الأولى</h4>
+              <p>افتتاح أول مركز متخصص مزود بحديقة خارجية مغلقة، والذي جلب اهتمام العديد من الأسر المهتمة برعاية محسّنة.</p>
+            </div>
+            <div class="t-year">2017</div>
+          </div>
+          <div class="t-item">
+            <div class="t-content">
+              <h4>عيادة الطب الوقائي</h4>
+              <p>إدماج القطاع الطبي ليعمل جنباً إلى جنب مع فريق الإقامة، محققين بذلك اكتفاءً ذاتياً شاملاً لضمان التدخل الفوري.</p>
+            </div>
+            <div class="t-year">2020</div>
+          </div>
+          <div class="t-item">
+            <div class="t-content">
+              <h4>تدشين تجربة النخبة</h4>
+              <p>إرساء مفهوم جديد في عالم الإقامات، ببناء أجنحة فندقية تعتمد على التكنولوجيا الذكية والرفاهية المفرطة وتوسيع نطاق التوصيل.</p>
+            </div>
+            <div class="t-year">2024</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer-v4">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon" style="background:#fff; color:var(--charcoal);">🌿</div>
+            <div class="logo-text" style="color:var(--white);">Loving Homes</div>
+          </a>
+          <p class="footer-p">نصنع ذكريات سعيدة للحيوانات الأليفة في بيئة استثنائية.</p>
+        </div>
+        <div class="footer-col">
+          <h4>المسارات</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="services.html">مفهومنا</a></li>
+            <li><a href="packages.html">المساحات</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>الروابط</h4>
+          <ul class="footer-links">
+            <li><a href="story.html">تاريخنا</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>الموقع</h4>
+          <p class="footer-p" style="margin-top:0;">هونغ كونغ<br/>خدمة استقبال مخصصة ومتاحة لكافة المناطق.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Loving Homes. تصميم عصري جديد.</span>
+        <span>بكل حب من هونغ كونغ.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+
+</html>

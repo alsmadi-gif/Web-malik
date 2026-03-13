@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="تواصل مع Loving Homes – احجز تجربة الإقامة في هونغ كونغ." />
+  <title>تواصل معنا | Loving Homes – هونغ كونغ</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .page-header-v4 {
+      background: var(--sage-100);
+      color: var(--sage-900);
+      padding: 10rem 0 6rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-header-v4 h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; position: relative; z-index: 1;}
+    .page-header-v4 p { color: var(--text-mid); font-size: 1.2rem; max-width: 600px; margin: 0 auto; position: relative; z-index: 1;}
+    .page-header-v4::before {
+      content: ''; position: absolute; top: -100px; left: -100px; width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(126,179,160,0.2) 0%, transparent 70%); border-radius: 50%;
+    }
+
+    .booking-steps { padding: 6rem 0; background: var(--white); }
+    .b-header { text-align: center; margin-bottom: 5rem; max-width: 600px; margin: 0 auto 4rem; }
+    .b-header h2 { color: var(--sage-900); }
+    
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 3rem;
+    }
+    .s-card {
+      text-align: center;
+      background: var(--sand-50);
+      padding: 3rem 2rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--sand-200);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .s-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-sm); border-color: var(--sand-400); }
+    .s-num {
+      width: 60px; height: 60px;
+      background: var(--sage-800); color: var(--white);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      font-size: 1.8rem; font-weight: 800;
+      margin: 0 auto 1.5rem;
+    }
+    .s-card h3 { color: var(--sage-900); margin-bottom: 1rem; font-size: 1.3rem; }
+    .s-card p { color: var(--text-mid); font-size: 0.95rem; line-height: 1.6; }
+
+    .c-split { padding: 6rem 0; background: var(--sand-50); }
+    .c-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .c-info {
+      background: var(--sage-900); color: var(--white);
+      padding: 5rem 4rem; position: relative;
+    }
+    .c-info h2 { margin-bottom: 1.5rem; color: var(--white); }
+    .c-info p.desc { color: rgba(255,255,255,0.7); margin-bottom: 3rem; font-size: 1.1rem; }
+    
+    .c-item { display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 2rem; }
+    .c-icon {
+      width: 50px; height: 50px; flex-shrink: 0;
+      background: rgba(255,255,255,0.05); color: var(--sand-400);
+      border-radius: 50%; display: grid; place-items: center; font-size: 1.3rem; border: 1px solid rgba(255,255,255,0.1);
+    }
+    .c-text h4 { color: var(--white); font-size: 1.1rem; margin-bottom: 0.3rem; }
+    .c-text p { color: rgba(255,255,255,0.6); margin: 0; font-size: 0.95rem; }
+
+    .c-form { padding: 5rem 4rem; }
+    .c-form h3 { color: var(--sage-900); font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .c-form p.desc { color: var(--text-mid); margin-bottom: 3rem; }
+    
+    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .f-group { margin-bottom: 1.5rem; }
+    .f-group label { display: block; font-weight: 700; color: var(--sage-900); margin-bottom: 0.6rem; font-size: 0.9rem; }
+    .f-ctrl {
+      width: 100%; padding: 1rem 1.2rem;
+      border: 1px solid var(--sand-200); background: var(--sand-50);
+      border-radius: var(--radius-sm); font-family: inherit; color: var(--text-dark);
+      transition: var(--transition);
+    }
+    .f-ctrl:focus { outline: none; border-color: var(--sage-400); background: var(--white); box-shadow: 0 0 0 3px rgba(126,179,160,0.1); }
+    textarea.f-ctrl { min-height: 140px; resize: vertical; }
+    .f-check { display: flex; align-items: flex-start; gap: 0.8rem; cursor: pointer; color: var(--text-mid); font-size: 0.9rem; }
+
+    .faq-sect { padding: 8rem 0; background: var(--white); }
+    .f-header { text-align: center; margin-bottom: 4rem; }
+    .faq-wrap { max-width: 800px; margin: 0 auto; }
+    .f-item { border-bottom: 1px solid var(--sand-200); padding: 1.5rem 0; }
+    .f-btn {
+      width: 100%; text-align: right; background: none; border: none;
+      font-family: inherit; font-size: 1.2rem; font-weight: 700; color: var(--sage-900);
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: var(--transition);
+    }
+    .f-btn:hover { color: var(--sage-600); }
+    .f-toggle { width: 34px; height: 34px; border-radius: 50%; background: var(--sand-50); display: grid; place-items: center; font-size: 1.2rem; transition: 0.4s; }
+    .f-item.active .f-toggle { transform: rotate(45deg); background: var(--sage-100); color: var(--sage-800); }
+    .f-content { max-height: 0; overflow: hidden; transition: 0.4s; color: var(--text-mid); line-height: 1.8; }
+    .f-item.active .f-content { margin-top: 1rem; max-height: 200px; }
+
+    @media (max-width: 900px) {
+      .c-wrap { grid-template-columns: 1fr; }
+      .c-info, .c-form { padding: 3rem 2rem; }
+      .f-row { grid-template-columns: 1fr; gap: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">🌿</div>
+          <div class="logo-text">Loving Homes</div>
+        </a>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="services.html">مفهومنا</a></li>
+          <li><a href="packages.html">الإقامات</a></li>
+          <li><a href="story.html">تاريخنا</a></li>
+          <li><a href="contact.html" class="nav-cta active">ابدأ التجربة</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header-v4">
+      <div class="container">
+        <h1>هنا نبدأ معاً</h1>
+        <p>فريقنا جاهز للإجابة على استفساراتك وتنسيق إقامة تضمن له الراحة ولك الطمأنينة.</p>
+      </div>
+    </section>
+
+    <section class="booking-steps">
+      <div class="container">
+        <div class="b-header">
+          <span style="color:var(--sand-500); font-weight:800; display:block; margin-bottom:1rem;">آلية الحجز</span>
+          <h2>خطوات بسيطة ومريحة</h2>
+        </div>
+        
+        <div class="steps-grid">
+          <div class="s-card">
+            <div class="s-num">1</div>
+            <h3>راسلنا ببياناته</h3>
+            <p>أخبرنا عن سلالته، عمره، وطباعه لنفهم احتياجاته بشكل استباقي.</p>
+          </div>
+          <div class="s-card">
+            <div class="s-num">2</div>
+            <h3>نصمم الخطة</h3>
+            <p>سيقوم خبراؤنا بترشيح الباقة أو التعديلات الأنسب ليحظى بتجربة متوازنة ومريحة.</p>
+          </div>
+          <div class="s-card">
+            <div class="s-num">3</div>
+            <h3>استمتع بوقتك</h3>
+            <p>مجرد أن نستلمه، نتحمل كامل المسؤولية وسنبقيك على اطلاع بتحديثات موثقة ومبهجة.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="c-split">
+      <div class="container">
+        <div class="c-wrap">
+          
+          <div class="c-info">
+            <h2>قنوات الاستقبال</h2>
+            <p class="desc">نحن نؤمن بأن الشفافية والرد السريع هما مفتاح راحة البال، ومتاحون لتلبية أدق المتطلبات.</p>
+            
+            <div class="c-item">
+              <div class="c-icon">📞</div>
+              <div class="c-text">
+                <h4>التواصل الهاتفي</h4>
+                <p>0000 0000 852+ <br/> من الثامنة صباحاً حتى الثامنة مساءً.</p>
+              </div>
+            </div>
+            
+            <div class="c-item">
+              <div class="c-icon">✉️</div>
+              <div class="c-text">
+                <h4>البريد الإلكتروني</h4>
+                <p>hello@lovinghomes.hk <br/> نرد على كافة الرسائل خلال نفس اليوم.</p>
+              </div>
+            </div>
+            
+            <div class="c-item">
+              <div class="c-icon">📍</div>
+              <div class="c-text">
+                <h4>موقع التجمع</h4>
+                <p>هونغ كونغ <br/> خدمة النقل متاحة في كافة المناطق لتجربة مريحة.</p>
+              </div>
+            </div>
+
+            <div class="c-item">
+              <div class="c-icon">🩺</div>
+              <div class="c-text">
+                <h4>الرعاية الطارئة</h4>
+                <p>0001 0000 852+ <br/> الطاقم الطبي المناوب متاح على مدار الساعة.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="c-form">
+            <h3>املأ بيانات الاستفسار</h3>
+            <p class="desc">أرسل نموذج الطلب، وسنتواصل معك سريعاً لترتيب كافة التفاصيل الخاصة بإقامته.</p>
+
+            <form id="contactForm" onsubmit="event.preventDefault(); document.getElementById('fSuccess').style.display='block';">
+              <div class="f-row">
+                <div class="f-group">
+                  <label>الاسم الكامل</label>
+                  <input type="text" class="f-ctrl" required />
+                </div>
+                <div class="f-group">
+                  <label>البريد الإلكتروني</label>
+                  <input type="email" class="f-ctrl" required />
+                </div>
+              </div>
+
+              <div class="f-row">
+                <div class="f-group">
+                  <label>رقم الاتصال</label>
+                  <input type="tel" class="f-ctrl" required />
+                </div>
+                <div class="f-group">
+                  <label>اسم كلبك</label>
+                  <input type="text" class="f-ctrl" />
+                </div>
+              </div>
+
+              <div class="f-group">
+                <label>نوع الخدمة المطلوبة</label>
+                <select class="f-ctrl">
+                  <option selected disabled>اختر من القائمة...</option>
+                  <option>الرعاية النهارية</option>
+                  <option>ملاذ الإقامة الكاملة</option>
+                  <option>إقامة النخبة الفاخرة</option>
+                  <option>أسئلة عامة</option>
+                </select>
+              </div>
+
+              <div class="f-group">
+                <label>تفاصيل احتياجاته</label>
+                <textarea class="f-ctrl" placeholder="هل توجد أدوية عينية؟ متطلبات سلوكية؟" required></textarea>
+              </div>
+              
+              <div class="f-group">
+                <label class="f-check" style="flex-direction:row-reverse; text-align:right;">
+                  <span>أوافق على استخدام هذه البيانات من أجل الرد والتواصل اللاحق معي ضمن الشروط المطلوبة.</span>
+                  <input type="checkbox" required style="width:auto; transform:scale(1.2); margin-top:3px;"/>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%;">أرسل الاستفسار الآن</button>
+              
+              <div id="fSuccess" style="display:none; color:var(--sage-800); background:var(--sage-100); padding:1rem; border-radius:var(--radius-sm); margin-top:1.5rem; text-align:center; font-weight:700;">
+                تم استلام طلبك! سنتواصل معك في أسرع وقت.
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-sect">
+      <div class="container">
+        <div class="f-header">
+          <span style="color:var(--sand-500); font-weight:800; display:block; margin-bottom:1rem;">ببساطة</span>
+          <h2 style="color:var(--sage-900);">أسئلة تطرح باستمرار</h2>
+        </div>
+        
+        <div class="faq-wrap">
+          <div class="f-item" onclick="this.classList.toggle('active')">
+            <button class="f-btn">متى يُفضل الحجز للمواسم المزدحمة؟ <span class="f-toggle">+</span></button>
+            <div class="f-content"><p>ننصح بالتأكيد قبل ٤ أسابيع على الأقل لضمان مكان مريح، خصوصاً في العطلات الرسمية.</p></div>
+          </div>
+          
+          <div class="f-item" onclick="this.classList.toggle('active')">
+            <button class="f-btn">كيف تعملون لو حدث طارئ صحي؟ <span class="f-toggle">+</span></button>
+            <div class="f-content"><p>يتوفر فريق طبي مقيم، وسيتم إبلاغك وإرسال التحديثات لك فور أي عارض أو تدخل فوري سريع.</p></div>
+          </div>
+          
+          <div class="f-item" onclick="this.classList.toggle('active')">
+            <button class="f-btn">ماذا لو أردت إحضار طعامه المعتاد من المنزل؟ <span class="f-toggle">+</span></button>
+            <div class="f-content"><p>نرحب بذلك تماماً، فنحن نفضل الاعتماد على النظام نفسه لمنع حساسية الانتقال السريع بين أنواع الأطعمة.</p></div>
+          </div>
+          
+          <div class="f-item" onclick="this.classList.toggle('active')">
+            <button class="f-btn">هل يمكنني الاستطلاع على المركز وزيارته؟ <span class="f-toggle">+</span></button>
+            <div class="f-content"><p>بكل تأكيد، الجولات الشخصية متوفرة عند الطلب لمساعدتك على الاطمئنان الكامل على بيئة صديقك.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer-v4">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon" style="background:#fff; color:var(--charcoal);">🌿</div>
+            <div class="logo-text" style="color:var(--white);">Loving Homes</div>
+          </a>
+          <p class="footer-p">نصنع ذكريات سعيدة للحيوانات الأليفة في بيئة استثنائية.</p>
+        </div>
+        <div class="footer-col">
+          <h4>المسارات</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="services.html">مفهومنا</a></li>
+            <li><a href="packages.html">المساحات</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>الروابط</h4>
+          <ul class="footer-links">
+            <li><a href="story.html">تاريخنا</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>الموقع</h4>
+          <p class="footer-p" style="margin-top:0;">هونغ كونغ<br/>خدمة استقبال مخصصة ومتاحة لكافة المناطق.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Loving Homes. تصميم عصري جديد.</span>
+        <span>بكل حب من هونغ كونغ.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+
+</html>
