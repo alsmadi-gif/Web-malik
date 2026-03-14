@@ -1,4 +1,4 @@
-﻿/* ================================================
+/* ================================================
    Loving Homes – script.js (تجديد الواجهة)
    ================================================ */
 
@@ -129,4 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
+  /* ── منع النسخ والحماية ─────────────────── */
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('dragstart', e => e.preventDefault());
 });

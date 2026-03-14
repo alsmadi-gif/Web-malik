@@ -48,6 +48,8 @@ body {
   line-height: 1.7;
   direction: rtl;
   overflow-x: hidden;
+  -webkit-user-select: none;
+  user-select: none;
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
